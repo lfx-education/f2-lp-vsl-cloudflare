@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augmentez votre volume</title>
+    
+    <!-- UTMIFY: Script de rastreamento de UTMs -->
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+    
+    <!-- UTMIFY: Pixel do TikTok -->
+    <script>
+      window.tikTokPixelId = "697a1d0f84ed2cbeae1ce30c";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+      document.head.appendChild(a);
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .warning-bar {
+            background-color: #000;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .warning-bar span.red {
+            color: #e31c1c;
+        }
+
+        .warning-bar span.white {
+            color: #fff;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .headline {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .headline span.white {
+            color: #fff;
+        }
+
+        .headline span.red {
+            color: #e31c1c;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .disclaimer {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            margin: 25px auto;
+            padding: 18px 30px;
+            background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(180deg, #27ae60 0%, #1e8449 100%);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Classe para esconder elementos com delay */
+        .esconder {
+            display: none;
+        }
+
+        .footer {
+            background-color: #111;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .footer-links {
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 12px;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #888;
+            text-decoration: underline;
+        }
+
+        .footer-legal {
+            color: #555;
+            font-size: 11px;
+            max-width: 800px;
+            margin: 15px auto 0;
+            line-height: 1.5;
+        }
+
+        /* Seção de Comentários Facebook */
+        .comments-section {
+            width: 100%;
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .comments-header {
+            color: #1c1e21;
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #dddfe2;
+            margin-bottom: 15px;
+        }
+
+        .comment {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-bubble {
+            background: #f0f2f5;
+            border-radius: 18px;
+            padding: 10px 15px;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .comment-author {
+            color: #1877f2;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 2px;
+            cursor: default;
+        }
+
+        .comment-author:hover {
+            text-decoration: underline;
+        }
+
+        .comment-text {
+            color: #1c1e21;
+            font-size: 14px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .comment-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+            padding-left: 5px;
+            flex-wrap: wrap;
+        }
+
+        .comment-action {
+            color: #65676b;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: default;
+            text-decoration: none;
+        }
+
+        .comment-action:hover {
+            text-decoration: underline;
+        }
+
+        .comment-time {
+            color: #65676b;
+            font-size: 12px;
+        }
+
+        .comment-reactions {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-left: auto;
+        }
+
+        .reaction-icons {
+            display: flex;
+        }
+
+        .reaction-icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            margin-left: -4px;
+        }
+
+        .reaction-icon:first-child {
+            margin-left: 0;
+        }
+
+        .reaction-icon.heart {
+            background: #f33e58;
+            color: white;
+        }
+
+        .reaction-icon.like {
+            background: #1877f2;
+            color: white;
+        }
+
+        .reaction-count {
+            color: #65676b;
+            font-size: 13px;
+            margin-left: 5px;
+        }
+
+        /* Replies */
+        .comment-replies {
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        .comment-replies .comment {
+            margin-bottom: 10px;
+        }
+
+        .comment-replies .comment-avatar {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .warning-bar {
+                font-size: 14px;
+                padding: 12px 15px;
+            }
+
+            .headline {
+                font-size: 22px;
+            }
+
+            .video-container {
+                max-width: 100%;
+            }
+
+            .video-placeholder {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .warning-bar {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            .headline {
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+
+            .disclaimer {
+                font-size: 12px;
+            }
+
+            .comments-section {
+                margin: 20px 10px;
+                padding: 15px;
+            }
+
+            .comment-replies {
+                margin-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================ -->
+    <!-- SEÇÃO: CONTEÚDO PRINCIPAL -->
+    <!-- ============================================ -->
+    <main class="main-content">
+        
+        <!-- ============================================ -->
+        <!-- SUBSESSÃO: CONTAINER DO VÍDEO VSL -->
+        <!-- ============================================ -->
+        <div class="video-container">
+            <vturb-smartplayer id="vid-69650a4c93850164e90070b1" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+            <script type="text/javascript">
+                var s=document.createElement("script");
+                s.src="https://scripts.converteai.net/0a3354aa-86ae-420a-8ddf-9bf9428c3ec4/players/69650a4c93850164e90070b1/v4/player.js";
+                s.async=!0;
+                document.head.appendChild(s);
+            </script>
+        </div>
+
+    </main>
+</body>
+</html>
+
