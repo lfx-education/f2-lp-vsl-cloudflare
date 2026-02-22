@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bien-être & Santé | Conseils et recommandations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: #666;
+        }
+        .newsletter {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+        .newsletter h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .newsletter p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .newsletter form {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .newsletter input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        .newsletter button {
+            padding: 12px 24px;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .newsletter button:hover {
+            background: #1d4ed8;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+        .about-products {
+            margin: 48px 0;
+        }
+        .about-products p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+        .products {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .product-card {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fff;
+            align-items: flex-start;
+        }
+        .product-card img {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .product-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+        .product-info a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff9900;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .product-info a:hover {
+            background: #e88b00;
+        }
+        footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+        }
+        footer a {
+            color: #666;
+            font-size: 13px;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .product-card { flex-direction: column; }
+            .product-card img { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bien-être & Santé</h1>
+            <p class="subtitle">Conseils et recommandations pour une vie plus équilibrée</p>
+        </header>
+
+        <h2 class="section-title">Recommandations lecture</h2>
+        <div class="products">
+            <article class="product-card">
+                <img src="https://images-na.ssl-images-amazon.com/images/P/2266261770.01._SY160_SX118_.jpg" alt="Changez d'alimentation - Henri Joyeux">
+                <div class="product-info">
+                    <h3>Changez d'alimentation</h3>
+                    <p>Henri Joyeux. Un guide essentiel sur l'alimentation et la prévention. Des conseils pratiques pour une alimentation saine au quotidien.</p>
+                    <a href="https://www.amazon.fr/dp/2266261770" target="_blank" rel="noopener">Voir sur Amazon</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="https://images-na.ssl-images-amazon.com/images/P/2853274616.01._SY160_SX118_.jpg" alt="Nutrithérapie - Dr Jean-Paul Curtay">
+                <div class="product-info">
+                    <h3>Nutrithérapie</h3>
+                    <p>Choisir les aliments pour prévenir et guérir. Un ouvrage de référence sur la nutrition et le bien-être par l'alimentation.</p>
+                    <a href="https://www.amazon.fr/dp/2853274616" target="_blank" rel="noopener">Voir sur Amazon</a>
+                </div>
+            </article>
+        </div>
+
+        <section class="about-products">
+            <h2 class="section-title">À propos de ces ouvrages</h2>
+            <p>Nous sélectionnons des livres fiables sur la santé, la nutrition et le bien-être. Ces ouvrages offrent des conseils fondés sur des données scientifiques pour vous accompagner dans votre démarche. Les liens Amazon nous permettent de maintenir ce site tout en vous proposant des recommandations utiles.</p>
+        </section>
+
+        <section class="newsletter">
+            <h2>Recevez nos conseils</h2>
+            <p>Inscrivez-vous pour recevoir nos recommandations et actualités sur le bien-être.</p>
+            <form action="#" method="post" onsubmit="event.preventDefault(); return false;">
+                <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </section>
+
+        <footer>
+            <a href="#">Politique de confidentialité</a>
+        </footer>
+    </div>
+</body>
+</html>
